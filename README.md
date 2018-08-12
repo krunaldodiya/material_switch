@@ -6,7 +6,7 @@ A new Flutter package for both android and iOS which helps developers in creatin
 
 ## Screenshots
 
-![alt text](Screenshot_2018-08-12-21-31-52-746_com.ssx.socialstock.png)
+![alt text](https://imageresize.org/view/0628f470-a17c-41cb-b79d-5c8ad95cc11a)
 
 ## Usage
 
