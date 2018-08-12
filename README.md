@@ -27,6 +27,8 @@ material_switch: ^0.0.1:
 ### How to use
 
 ```dart
+import 'package:material_switch/material_switch.dart';
+
 class _ExampleState extends State<Example> {
   List<String> switchOptions = ["Male", "Female"];
   String selectedSwitchOption = "Male";
