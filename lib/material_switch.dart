@@ -13,15 +13,17 @@ class MaterialSwitch extends StatefulWidget {
   final Color selectedBackgroundColor;
   @required
   final Color selectedTextColor;
+  @required
+  final EdgeInsets margin;
 
-  MaterialSwitch({
-    Key key,
-    this.options,
-    this.selectedOption,
-    this.onSelect,
-    this.selectedBackgroundColor,
-    this.selectedTextColor,
-  });
+  MaterialSwitch(
+      {Key key,
+      this.options,
+      this.selectedOption,
+      this.onSelect,
+      this.selectedBackgroundColor,
+      this.selectedTextColor,
+      this.margin});
 
   @override
   _MaterialSwitchState createState() => new _MaterialSwitchState();
@@ -31,12 +33,12 @@ class _MaterialSwitchState extends State<MaterialSwitch> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
+      margin: widget.margin,
       child: Row(
         children: <Widget>[
           Expanded(
             child: RaisedButton(
-              padding: EdgeInsets.fromLTRB(20.0, 17.5, 17.5, 17.5),
+              padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
               shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.only(
                   topLeft: Radius.circular(30.0),
@@ -64,7 +66,7 @@ class _MaterialSwitchState extends State<MaterialSwitch> {
           ),
           Expanded(
             child: RaisedButton(
-              padding: EdgeInsets.fromLTRB(20.0, 17.5, 17.5, 17.5),
+              padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
               shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.only(
                   topRight: Radius.circular(30.0),
