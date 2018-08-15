@@ -7,26 +7,30 @@ class Example extends StatefulWidget {
 }
 
 class _ExampleState extends State<Example> {
-  List<String> switchOptions = ["Male", "Female"];
-  String selectedSwitchOption = "Male";
+  List<String> switchOptions = ['Male', 'Female'];
+  String selectedSwitchOption = 'Male';
+  String appTitle = 'Material Switch Demo';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Material Switch Demo"),
+        title: Text(appTitle),
       ),
       body: Column(children: <Widget>[
         MaterialSwitch(
-            selectedOption: selectedSwitchOption,
-            options: switchOptions,
-            selectedBackgroundColor: Colors.indigo,
-            selectedTextColor: Colors.white,
-            onSelect: (selectedOption) {
-              setState(() {
-                selectedSwitchOption = selectedOption;
-              });
-            }),
+          padding: const EdgeInsets.all(5.0),
+          margin: const EdgeInsets.all(5.0),
+          selectedOption: selectedSwitchOption,
+          options: switchOptions,
+          selectedBackgroundColor: Colors.indigo,
+          selectedTextColor: Colors.white,
+          onSelect: (String selectedOption) {
+            setState(() {
+              selectedSwitchOption = selectedOption;
+            });
+          },
+        ),
       ]),
     );
   }

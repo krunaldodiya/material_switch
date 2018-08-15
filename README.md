@@ -21,7 +21,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-material_switch: ^0.0.1:
+material_switch: ^0.0.5:
 ```
 
 ### How to use

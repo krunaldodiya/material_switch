@@ -9,3 +9,7 @@
 ## [0.0.3] - Release
 
 - Give margin property to adjust switch
+
+## [0.0.4] - Release
+
+- Give padding property to adjust switch
