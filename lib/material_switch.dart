@@ -18,7 +18,7 @@ class MaterialSwitch extends StatefulWidget {
   @required
   final EdgeInsets padding;
 
-  MaterialSwitch({
+  const MaterialSwitch({
     Key key,
     this.options,
     this.selectedOption,
@@ -27,7 +27,7 @@ class MaterialSwitch extends StatefulWidget {
     this.selectedTextColor,
     this.margin,
     this.padding,
-  });
+  }) : super(key: key);
 
   @override
   _MaterialSwitchState createState() => new _MaterialSwitchState();

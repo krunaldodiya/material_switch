@@ -2,7 +2,7 @@
 
 A new Flutter package for both android and iOS which helps developers in creating material switch widget using button.
 
-### Show some :heart: and star the repo to support the project
+## Show some :heart: and star the repo to support the project
 
 ## Screenshots
 
@@ -40,32 +40,35 @@ class _ExampleState extends State<Example> {
         title: Text("Material Switch Demo"),
       ),
       body: Column(children: <Widget>[
-        MaterialSwitch(
-            selectedOption: selectedSwitchOption,
-            options: switchOptions,
-            selectedBackgroundColor: Colors.indigo,
-            selectedTextColor: Colors.white,
-            onSelect: (selectedOption) {
-              setState(() {
-                selectedSwitchOption = selectedOption;
-              });
-            }),
+         MaterialSwitch(
+          padding: const EdgeInsets.all(5.0),
+          margin: const EdgeInsets.all(5.0),
+          selectedOption: selectedSwitchOption,
+          options: switchOptions,
+          selectedBackgroundColor: Colors.indigo,
+          selectedTextColor: Colors.white,
+          onSelect: (String selectedOption) {
+            setState(() {
+              selectedSwitchOption = selectedOption;
+            });
+          },
+        ),
       ]),
     );
   }
 ```
 
-# Pull Requests
+### Pull Requests
 
 I welcome and encourage all pull requests. It usually will take me within 24-48 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
 
-1.  Match coding style (braces, spacing, etc.) This is best achieved using `Reformat Code` feature of Android Studio `CMD`+`Option`+`L` on Mac and `CTRL` + `ALT` + `L` on Linux + Windows .
-2.  If its a feature, bugfix, or anything please only change code to what you specify.
-3.  Please keep PR titles easy to read and descriptive of changes, this will make them easier to merge :)
-4.  Pull requests _must_ be made against `develop` branch. Any other branch (unless specified by the maintainers) will get rejected.
-5.  Check for existing [issues](https://github.com/kunaldodiya/material_switch/issues) first, before filing an issue.
-6.  Make sure you follow the set standard as all other projects in this repo do
-7.  Have fun!
+1. Match coding style (braces, spacing, etc.) This is best achieved using `Reformat Code` feature of Android Studio `CMD`+`Option`+`L` on Mac and `CTRL` + `ALT` + `L` on Linux + Windows .
+2. If its a feature, bugfix, or anything please only change code to what you specify.
+3. Please keep PR titles easy to read and descriptive of changes, this will make them easier to merge :)
+4. Pull requests _must_ be made against `develop` branch. Any other branch (unless specified by the maintainers) will get rejected.
+5. Check for existing [issues](https://github.com/kunaldodiya/material_switch/issues) first, before filing an issue.
+6. Make sure you follow the set standard as all other projects in this repo do
+7. Have fun!
 
 ### Created & Maintained By
 
@@ -76,7 +79,7 @@ Twitter - [@kunaldodiya](https://www.twitter.com/mrkunaldodiya)
 >
 > - [PayPal](https://paypal.me/krunaldodiya)
 
-# License
+## License
 
     Copyright 2018 Krunal dodiya <kunal.dodiya1@gmail.com>
 

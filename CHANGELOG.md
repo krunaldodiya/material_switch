@@ -13,3 +13,11 @@
 ## [0.0.4] - Release
 
 - Give padding property to adjust switch
+
+## [0.0.5] - Release
+
+- Typos in example
+
+## [0.0.6] - Release
+
+- Added type checking & dart analyzer

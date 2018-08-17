@@ -7,7 +7,7 @@ class Example extends StatefulWidget {
 }
 
 class _ExampleState extends State<Example> {
-  List<String> switchOptions = ['Male', 'Female'];
+  List<String> switchOptions = <String>['Male', 'Female'];
   String selectedSwitchOption = 'Male';
   String appTitle = 'Material Switch Demo';
 
