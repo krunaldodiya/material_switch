@@ -6,7 +6,6 @@ class MaterialSwitch extends StatefulWidget {
   const MaterialSwitch({
     Key key,
     @required this.options,
-    this.selectedOption,
     this.onSelect,
     this.selectedBackgroundColor,
     this.selectedTextColor,
@@ -17,7 +16,6 @@ class MaterialSwitch extends StatefulWidget {
   }) : super(key: key);
 
   final List<String> options;
-  final String selectedOption;
   final ValueChanged<int> onSelect;
   final Color selectedBackgroundColor;
   final Color selectedTextColor;
