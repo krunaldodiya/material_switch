@@ -3,39 +3,49 @@ library material_switch;
 import 'package:flutter/material.dart';
 
 class MaterialSwitch extends StatefulWidget {
-  @required
-  final List<String> options;
-  @required
-  final String selectedOption;
-  @required
-  final Function onSelect;
-  @required
-  final Color selectedBackgroundColor;
-  @required
-  final Color selectedTextColor;
-  @required
-  final EdgeInsets margin;
-  @required
-  final EdgeInsets padding;
-
   const MaterialSwitch({
     Key key,
-    this.options,
+    @required this.options,
     this.selectedOption,
     this.onSelect,
     this.selectedBackgroundColor,
     this.selectedTextColor,
     this.margin,
+    this.style,
     this.padding,
+    this.elevation
   }) : super(key: key);
+
+  final List<String> options;
+  final String selectedOption;
+  final ValueChanged<int> onSelect;
+  final Color selectedBackgroundColor;
+  final Color selectedTextColor;
+  final EdgeInsets margin;
+  final EdgeInsets padding;
+  final TextStyle style;
+  final double elevation;
+  
+
 
   @override
   _MaterialSwitchState createState() => new _MaterialSwitchState();
 }
 
 class _MaterialSwitchState extends State<MaterialSwitch> {
+  int _pos = 0;
+
+
+  void _onTap(int pos) {
+    setState(() {
+      _pos = pos;
+    });
+    widget.onSelect(_pos);
+  }
+  
   @override
   Widget build(BuildContext context) {
+    final ThemeData _theme = Theme.of(context);
     return Container(
       margin: widget.margin,
       child: Row(
@@ -49,23 +59,18 @@ class _MaterialSwitchState extends State<MaterialSwitch> {
                   bottomLeft: Radius.circular(30.0),
                 ),
               ),
-              textColor: widget.selectedOption == widget.options[0]
-                  ? widget.selectedTextColor
-                  : Colors.black,
-              splashColor: widget.selectedOption == widget.options[0]
-                  ? widget.selectedBackgroundColor
-                  : Colors.white,
-              color: widget.selectedOption == widget.options[0]
-                  ? widget.selectedBackgroundColor
-                  : Colors.white,
-              highlightColor: widget.selectedOption == widget.options[0]
-                  ? widget.selectedBackgroundColor
-                  : Colors.white,
+              textColor: _pos == 0 ? widget.selectedTextColor : _theme.textTheme.body1.color,
+              splashColor: _pos == 0 ? widget.selectedBackgroundColor : _theme.splashColor,
+              color: _pos  == 0 ? widget.selectedBackgroundColor : _theme.buttonColor,
+              highlightColor: _pos == 0 ? widget.selectedBackgroundColor : _theme.highlightColor,
               child: Container(
-                alignment: Alignment.bottomLeft,
-                child: Text(widget.options[0]),
+                alignment: Alignment.center,
+                child: Text(widget.options[0], style: widget.style,),
               ),
-              onPressed: () => widget.onSelect(widget.options[0]),
+              elevation: widget.elevation,
+              onPressed: () {
+                _onTap(0);
+              },
             ),
           ),
           Expanded(
@@ -77,23 +82,18 @@ class _MaterialSwitchState extends State<MaterialSwitch> {
                   bottomRight: Radius.circular(30.0),
                 ),
               ),
-              textColor: widget.selectedOption == widget.options[1]
-                  ? widget.selectedTextColor
-                  : Colors.black,
-              splashColor: widget.selectedOption == widget.options[1]
-                  ? widget.selectedBackgroundColor
-                  : Colors.white,
-              color: widget.selectedOption == widget.options[1]
-                  ? widget.selectedBackgroundColor
-                  : Colors.white,
-              highlightColor: widget.selectedOption == widget.options[1]
-                  ? widget.selectedBackgroundColor
-                  : Colors.white,
+              textColor: _pos == 1 ? widget.selectedTextColor : _theme.textTheme.body1.color,
+              splashColor: _pos == 1 ? widget.selectedBackgroundColor : _theme.splashColor,
+              color: _pos == 1 ? widget.selectedBackgroundColor : _theme.buttonColor,
+              highlightColor: _pos == 1 ? widget.selectedBackgroundColor : _theme.highlightColor,
               child: Container(
-                alignment: Alignment.bottomLeft,
-                child: Text(widget.options[1]),
+                alignment: Alignment.center,
+                child: Text(widget.options[1], style: widget.style),
               ),
-              onPressed: () => widget.onSelect(widget.options[1]),
+              elevation: widget.elevation,
+              onPressed: () {
+                _onTap(1);
+              },
             ),
           ),
         ],
