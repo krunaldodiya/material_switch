@@ -21,3 +21,7 @@
 ## [0.0.6] - Release
 
 - Added type checking & dart analyzer
+
+## [0.0.7] - Release
+
+- Added flexible styling
